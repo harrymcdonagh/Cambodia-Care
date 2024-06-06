@@ -1,2 +1,3 @@
-# CambodiaCare
-Eco-Tourism Website for Cambodia (Engineers Without Borders 2024)
+# Cambodia Care
+
+Eco-Tourism Website for Cambodia (Synoptic project /Engineers Without Borders 2024)
