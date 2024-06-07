@@ -1,0 +1,29 @@
+{
+  "name": "cambodia-care",
+  "version": "1.0.0",
+  "description": "Eco-Tourism Website for Cambodia (Synoptic project /Engineers Without Borders 2024)",
+  "main": "server.js",
+  "scripts": {
+    "start" : "node server.js",
+    "dstart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harrymcdonagh/Cambodia-Care.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harrymcdonagh/Cambodia-Care/issues"
+  },
+  "homepage": "https://github.com/harrymcdonagh/Cambodia-Care#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
