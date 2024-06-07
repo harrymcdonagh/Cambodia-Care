@@ -3,7 +3,6 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const dotenv = require('dotenv')
 const mysql = require('mysql2')
-const fs = require('fs')
 const path = require('path')
 
 //Routes
@@ -31,7 +30,7 @@ connection.connect(function(err) {
 })
 
 app.listen(3000, () => {
-    console.log('Server started on port 3000');
+    console.log('Server started on http://localhost:3000/');
 });
 
 app.use('/', indexRouter)
