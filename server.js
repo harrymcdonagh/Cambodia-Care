@@ -6,12 +6,14 @@ const mysql = require('mysql2')
 const path = require('path')
 
 //Routes
-const indexRouter = require('./routes/index')
+const indexRouter = require('./routes/home')
 const registerRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
 const buildRouter = require('./routes/build')
 const teachRouter = require('./routes/teach')
 const foodRouter = require('./routes/food')
+const accountRouter = require('./routes/account')
+const aboutRouter = require('./routes/about')
 
 dotenv.config()
 
@@ -44,3 +46,5 @@ app.use('/', loginRouter)
 app.use('/', buildRouter)
 app.use('/', teachRouter)
 app.use('/', foodRouter)
+app.use('/', accountRouter)
+app.use('/', aboutRouter)
