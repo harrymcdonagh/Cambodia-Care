@@ -109,7 +109,7 @@ html{
         position: absolute;
         right: 0px;
         bottom: 800px;
-        height: 250px;
+        height: 300px;
         width: 250px;
         opacity: 0;
         transition: all 0.7s ease;
@@ -121,7 +121,7 @@ html{
         background: white;
         opacity: 1;
         transition: all 0.7s ease;
-        height: 200px;
+        height: 300px;
         width: 150px;
         top: 80px;
         font-size: 1.6rem;

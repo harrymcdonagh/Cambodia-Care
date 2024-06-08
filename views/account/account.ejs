@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/css/account.css">
+
+<div id="account-page">
+    <div class="account-container">
+        <div class="account-header">
+            <h1>Welcome <%= name%></h1>
+            <p>View your bookings and account details here</p>
+        </div>
+        <section class="profile">
+            <div class="account-info">
+                <div class="account-item">
+                    <label>Email:</label>
+                    <span><%= email %></span>
+                </div>
+                <div class="account-item">
+                    <label>Name:</label>
+                    <span><%= name %></span>
+                </div>
+                <div class="account-item">
+                    <label>Surname:</label>
+                    <span><%= surname %></span>
+                </div>
+            </div>
+        </section>
+        <section class="account-bookings">
+            <h1>Current Bookings</h1>
+            <table border = "1">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Date</th>
+                        <th>Duration (Days)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% bookings.forEach(booking => { %>
+                        <tr>
+                            <td><%= booking.id %></td>
+                            <td><%= booking.date %></td>
+                            <td><%= booking.duration %></td>
+                            <td><%= booking.location %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
