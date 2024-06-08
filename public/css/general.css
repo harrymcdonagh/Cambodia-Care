@@ -190,10 +190,11 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    bottom: auto;
     width: 100%;
     z-index: 1000;
+    left: 0;
 }
 
 .footer-container {
@@ -209,3 +210,4 @@ html{
     margin: 0;
     font-size: 1rem;
 }
+
