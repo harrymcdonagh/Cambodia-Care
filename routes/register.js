@@ -1,6 +1,7 @@
 const express = require('express')
 const fs = require('fs');
 const path = require('path');
+const lr_func = require('../models/lr-forms')
 const router = express.Router()
 
 router.get('/register', (req,res)=>{
@@ -11,10 +12,10 @@ router.get('/register', (req,res)=>{
 })
 
 router.post('/register-confirm', (req, res) => {
-    const name = req.query.name;
-    const email = req.query.email;
-    const password = req.query.password;
-    Register(email, name, password);
+    const name = req.body.name;
+    const email = req.body.email;
+    const password = req.body.password;
+    lr_func.register(email, name, password);
     res.redirect('/login');
 });
 

@@ -12,7 +12,7 @@ router.get('/login', (req,res)=>{
 })
 
 router.post('/login-confirm', (req, res) => {
-    const email = req.body.Email;
+    const email = req.body.email;
     const password = req.body.password;
     const promise = new Promise(function(resolve){
         lr_func.login(email, password, function(callback) {
