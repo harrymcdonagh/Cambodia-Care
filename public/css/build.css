@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -12,7 +13,7 @@ body {
     align-items: flex-start;
 }
 
-.teach-page-container {
+.build-page-container {
     background-color: #fff;
     padding: 20px 40px;
     border-radius: 8px;
@@ -21,31 +22,31 @@ body {
     width: 100%;
 }
 
-.teach-page-container h1 {
+.build-page-container h1 {
     color: #333;
     margin-bottom: 20px;
 }
 
-.teach-page-container p {
+.build-page-container p {
     color: #555;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.teach-page-container h2 {
+.build-page-container h2 {
     color: #333;
     margin-bottom: 10px;
 }
 
-.teach-page-container ul {
+.build-page-container ul {
     margin-bottom: 20px;
 }
 
-.teach-page-container ul li {
+.build-page-container ul li {
     margin-bottom: 10px;
 }
 
-.teach-page-container blockquote {
+.build-page-container blockquote {
     margin: 20px 0;
     padding: 10px 20px;
     background-color: #f9f9f9;
@@ -54,13 +55,13 @@ body {
     color: #555;
 }
 
-.teach-page-container a {
+.build-page-container a {
     color: #5cb85c;
     text-decoration: none;
     font-weight: bold;
 }
 
-.teach-page-container a:hover {
+.build-page-container a:hover {
     text-decoration: underline;
 }
 
