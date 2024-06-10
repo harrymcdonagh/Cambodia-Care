@@ -1,0 +1,48 @@
+body {
+    background-color: white;
+}
+
+#confirm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.confirmation-container {
+    text-align: center;
+    margin-top: 50px;
+    border: 3px solid black;
+    width: 40%;
+    border-radius: 30px;
+}
+
+.confirmation-container h1 {
+    color: #4CAF50;
+}
+
+.confirmation-container p {
+    font-size: 18px;
+}
+
+.center-image {
+    display: block;
+    margin: 0 auto;
+    width: 55%;
+}
+
+.booking-details {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+}
+
+.booking-details h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.booking-details p {
+    margin: 5px 0;
+}

@@ -25,9 +25,11 @@ router.post('/login-confirm', (req, res) => {
             req.session.email = value[2];
             req.session.userid = value[1];
             req.session.isadmin = value[3];
-            res.redirect('/');
+            const returnTo = req.session.returnTo || '/'
+            delete req.session.returnTo
+            res.redirect(returnTo)
         }
-        else res.redirect('login'); 
+        else res.redirect('login') 
       });
 });
 

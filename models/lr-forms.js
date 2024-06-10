@@ -36,7 +36,6 @@ function login(email, password, callback){
 }
 
 function register(email, name, password) {
-    console.log(email, name, password);
     var query = "INSERT INTO user_tb (email, name, password, isAdmin) VALUES (?, ?, ?, 0)";
     
     db.getConnection(function (err, connection) {
