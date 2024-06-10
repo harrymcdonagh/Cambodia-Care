@@ -31,4 +31,15 @@ router.post('/login-confirm', (req, res) => {
       });
 });
 
+router.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.redirect('/');
+        }
+        res.clearCookie('connect.sid');
+        console.log('logout successful')
+        res.redirect('/');
+    });
+});
+
 module.exports =  router

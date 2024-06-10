@@ -27,10 +27,17 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
-    secret: 'your-secret-key',
+    secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: true
+
 }));
+
+app.use((req, res, next) => {
+    res.locals.user = req.session.email;
+    res.locals.isAdmin = req.session.isadmin;
+    next();
+});
 
 app.listen(3000, () => {
     console.log('Server started on http://localhost:3000/');
