@@ -1,0 +1,21 @@
+<link href="/css/booking.css" rel="stylesheet">
+<body>
+    <div class = "content">
+        <div class="booking-form-container">
+            <form class="booking-form">
+                <h2>Request Your Trip</h2>
+                <label for="service">Select Service:</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="teaching">Teaching</option>
+                    <option value="building">Building</option>
+                </select>
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" name="start-date" required>
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" name="end-date" required>
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+</body>
