@@ -16,7 +16,14 @@ router.post('/register-confirm', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     lr_func.register(email, name, password);
+    if (req.body.name && req.body.email && req.body.password) {
+        res.sendStatus(201);
+        //res.status(201).json('All fields passed');
+        res.redirect('/login');
+        return;
+      }
     res.redirect('/login');
+
 });
 
 module.exports = router

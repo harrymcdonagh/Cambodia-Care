@@ -1,3 +1,4 @@
+const request = require('supertest')
 const express = require('express')
 const session = require('express-session');
 const app = express()
@@ -53,3 +54,5 @@ app.use('/', teachRouter)
 app.use('/', foodRouter)
 app.use('/', accountRouter)
 app.use('/', aboutRouter)
+
+module.exports=app;

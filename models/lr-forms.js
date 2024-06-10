@@ -36,27 +36,33 @@ function login(email, password, callback){
 }
 
 function register(email, name, password) {
-    console.log(email, name, password);
-    var query = "INSERT INTO user_tb (email, name, password, isAdmin) VALUES (?, ?, ?, 0)";
-    
-    db.getConnection(function (err, connection) {
-        if (err) {
-            console.error("Error getting database connection:", err)
-            return
-        }
-        connection.query(query, [email, name, password], function (err, results) {
-            connection.release();
+    return new Promise((resolve, reject) => {
+        console.log(email, name, password);
+        var query = "INSERT INTO user_tb (email, name, password, isAdmin) VALUES (?, ?, ?, 0)";
+
+        db.getConnection(function (err, connection) {
             if (err) {
-                if (err.code === 'ER_DUP_ENTRY') {
-                    console.log("Account would be a duplicate")
-                } else {
-                    console.error("Error executing query:", err)
-                }
-            } else {
-                console.log("User registered successfully");
+                console.error("Error getting database connection:", err)
+                reject(err);
+                return;
             }
+            connection.query(query, [email, name, password], function (err, results) {
+                connection.release();
+                if (err) {
+                    if (err.code === 'ER_DUP_ENTRY') {
+                        console.log("Account would be a duplicate");
+                        reject(err);
+                    } else {
+                        console.error("Error executing query:", err);
+                        reject(err);
+                    }
+                } else {
+                    console.log("User registered successfully");
+                    resolve();
+                }
+            })
         })
-    })
+    });
 }
 
 module.exports = {

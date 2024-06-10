@@ -25,10 +25,11 @@ router.post('/login-confirm', (req, res) => {
             req.session.email = value[2];
             req.session.userid = value[1];
             req.session.isadmin = value[3];
-            res.redirect('/');
+            return res.sendStatus(201);
+            //res.redirect('/');
         }
         else res.redirect('login'); 
-      });
+      });  
 });
 
 router.get('/logout', (req, res) => {
