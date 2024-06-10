@@ -11,3 +11,11 @@ CREATE TABLE `user_tb` (
     PRIMARY KEY (`userID`),
     UNIQUE (`email`)
 );
+
+INSERT INTO user_tb (name,password,email,isAdmin) VALUES ('Gleb', 'AnimeBest', 'Gleb.krug@gmail.com', 0 );
+INSERT INTO user_tb (name,password,email,isAdmin) VALUES ('Sam', 'Tallman', 'Sam.p@gmail.com', 1 );
+INSERT INTO user_tb (name,password,email,isAdmin) VALUES ('Harry','Lovecss', 'Harry.M@gmail.com', 0 );
+INSERT INTO user_tb (name,password,email,isAdmin) VALUES ('Ben', 'Bimagnet', 'Ben.s@gmail.com', 0 );
+INSERT INTO user_tb (name,password,email,isAdmin) VALUES ('Oscar', 'Lovedrink', 'Oscar.s@gmail.com', 0 );
+INSERT INTO user_tb (name,password,email,isAdmin) VALUES ('OscarL', 'NewGuy', 'Oscar.l@gmail.com', 1 );
+INSERT INTO user_tb (name,password,email,isAdmin) VALUES ('FFF', 'FFF', 'FFF@gmail.com', 1 );

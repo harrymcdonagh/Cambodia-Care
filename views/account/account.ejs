@@ -3,22 +3,18 @@
 <div id="account-page">
     <div class="account-container">
         <div class="account-header">
-            <h1>Welcome <%= name%></h1>
+            <h1>Welcome <%= userAccount.name%></h1>
             <p>View your bookings and account details here</p>
         </div>
         <section class="profile">
             <div class="account-info">
                 <div class="account-item">
                     <label>Email:</label>
-                    <span><%= email %></span>
+                    <span><%= userAccount.email %></span>
                 </div>
                 <div class="account-item">
                     <label>Name:</label>
-                    <span><%= name %></span>
-                </div>
-                <div class="account-item">
-                    <label>Surname:</label>
-                    <span><%= surname %></span>
+                    <span><%= userAccount.name %></span>
                 </div>
             </div>
         </section>
@@ -27,19 +23,25 @@
             <table border = "1">
                 <thead>
                     <tr>
-                        <th>Booking ID</th>
-                        <th>Date</th>
-                        <th>Duration (Days)</th>
-                        <th>Location</th>
+                        <th>Date In</th>
+                        <th>Date Out</th>
+                        <th>Type</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% bookings.forEach(booking => { %>
+                    <% userBookings.forEach(booking => { %>
                         <tr>
-                            <td><%= booking.id %></td>
-                            <td><%= booking.date %></td>
-                            <td><%= booking.duration %></td>
-                            <td><%= booking.location %></td>
+                            <td><%= booking.dateIN %></td>
+                            <td><%= booking.dateOUT %></td>
+                            <td>
+                                <!--Formats type vairable and turns into words-->
+                                <% 
+                                    let typeText = booking.type === 0 ? 'Education' : 
+                                                booking.type === 1 ? 'Building' :
+                                                'Other';
+                                %>
+                                <%= typeText %>
+                            </td>
                         </tr>
                     <% }) %>
                 </tbody>

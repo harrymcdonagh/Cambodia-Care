@@ -22,13 +22,24 @@ router.post('/login-confirm', (req, res) => {
     promise.then((value) => {
         if (value[0] == true) {
             req.session.logged = true;
-            req.session.email = email;
+            req.session.email = value[2];
             req.session.userid = value[1];
-            req.session.isadmin = value[2];
+            req.session.isadmin = value[3];
             res.redirect('/');
         }
         else res.redirect('login'); 
       });
+});
+
+router.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.redirect('/');
+        }
+        res.clearCookie('connect.sid');
+        console.log('logout successful')
+        res.redirect('/');
+    });
 });
 
 module.exports =  router

@@ -6,6 +6,7 @@ Install the following packages:
 
 npm i express ejs express-ejs-layouts dotenv mysql2
 npm i --save-dev nodemon
+npm install express-session
 
 Commands:
 
