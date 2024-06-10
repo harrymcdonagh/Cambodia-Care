@@ -17,8 +17,9 @@ function login(email, password, callback){
             if (log.length > 0) {
                 let callbackData = [];
                 callbackData[0] = true;
-                callbackData[1] = log[0].email;
-                callbackData[2] = log[0].IsAdmin;
+                callbackData[1] = log[0].userID;
+                callbackData[2] = log[0].email;
+                callbackData[3] = log[0].IsAdmin;
                 console.log("login successful")
                 callback(callbackData);
                 connection.release();

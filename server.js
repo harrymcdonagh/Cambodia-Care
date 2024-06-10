@@ -35,6 +35,7 @@ app.use(session({
 
 app.use((req, res, next) => {
     res.locals.user = req.session.email;
+    res.locals.userID = req.session.userid
     res.locals.isAdmin = req.session.isadmin;
     next();
 });

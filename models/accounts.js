@@ -1,20 +1,52 @@
-function getUserAccount(userId) {
+const db = require('../db/database').mysql_pool;
+
+function getUserAccount(userid) {
     return new Promise((resolve, reject) => {
-        const user = {
-            id: userId,
-            email: 'test@example.com',
-            name: 'John',
-            surname: 'Doe',
-            bookings: [
-                { id: 1, date: '2024-06-10', duration: '13', location: 'Pu Nagol' },
-                { id: 2, date: '2024-06-12', duration: '14', location: 'Pu Nagol' }
-            ]
-        };
-        // Resolve with the user account data
-        resolve(user);
+        console.log(userid)
+        const query =  "SELECT * FROM user_tb WHERE userID ='"+userid+"'"; 
+        db.getConnection((err, connection) => {
+            if(err){
+                reject(err)
+                return
+            }
+            connection.query(query, [userid], (err, results) => {
+                connection.release()
+                if(err){
+                    reject(err)
+                    return
+                }
+                if (results.length === 0) {
+                    reject(new Error("User with id = "+userid+" not found"))
+                    return;
+                }
+                const user = results[0]
+                resolve(user)
+            })
+        })
+    })
+}
+
+function getUserBookings(userid){
+    return new Promise((resolve, reject) => {
+        const query = "SELECT * FROM bookings_tb WHERE userID = '"+userid+"'";
+        db.getConnection((err, connection) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            connection.query(query, [userid], (err, results) => {
+                connection.release();
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(results);
+            });
+        });
     });
 }
 
 module.exports = {
-    getUserAccount
+    getUserAccount,
+    getUserBookings
 };
