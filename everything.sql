@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS `main_db`;
 USE `main_db`;
 
+DROP TABLE IF EXISTS `bookings_tb`;
 DROP TABLE IF EXISTS `user_tb`;
 CREATE TABLE `user_tb` (
     `userID` int NOT NULL AUTO_INCREMENT,
@@ -21,7 +22,6 @@ INSERT INTO user_tb (name,password,email,isAdmin) VALUES ('OscarL', 'NewGuy', 'O
 INSERT INTO user_tb (name,password,email,isAdmin) VALUES ('FFF', 'FFF', 'FFF@gmail.com', 1 );
 
 
-DROP TABLE IF EXISTS `bookings_tb`;
 CREATE TABLE `bookings_tb` (
     `bookingID` int NOT NULL AUTO_INCREMENT,
     `dateIN` date DEFAULT NULL,
