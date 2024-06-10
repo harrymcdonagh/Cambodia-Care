@@ -10,4 +10,12 @@ router.get('/register', (req,res)=>{
     })
 })
 
+router.post('/register-confirm', (req, res) => {
+    const name = req.query.name;
+    const email = req.query.email;
+    const password = req.query.password;
+    Register(email, name, password);
+    res.redirect('/login');
+});
+
 module.exports = router

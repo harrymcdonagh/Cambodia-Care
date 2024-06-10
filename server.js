@@ -1,9 +1,8 @@
 const express = require('express')
+const session = require('express-session');
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const dotenv = require('dotenv')
-const mysql = require('mysql2')
-const path = require('path')
 
 //Routes
 const indexRouter = require('./routes/home')
@@ -17,24 +16,20 @@ const aboutRouter = require('./routes/about')
 
 dotenv.config()
 
+//Set views and layout paths
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 app.use(express.static('public'))
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 
-const connection = mysql.createConnection({
-    host: process.env.HOST_NAME,
-    user: process.env.USER_NAME,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
-})
-
-connection.connect(function(err) { 
-    if(err) throw err;
-    console.log("Connected to mysql")
-})
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true
+}));
 
 app.listen(3000, () => {
     console.log('Server started on http://localhost:3000/');
