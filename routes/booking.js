@@ -1,8 +1,3 @@
-/* BOOKING.JS
-        Interacts with server.js to load booking page
-        Makes sure user is logged in to create a booking
-        Confirms the booking and sends email to them
-*/
 const express = require('express');
 const router = express.Router();
 const ensureAuthenticated = require('../middleware/auth');
@@ -44,15 +39,15 @@ router.post('/make-booking', (req, res) =>{
     const startDate = req.body['start-date'];
     const endDate = req.body['end-date'];
     const userID = res.locals.userID;
-    const email = res.locals.email;
-    newBooking.book(type, startDate, endDate, userID, (err, result) => {
+    const email = res.locals.user;
+    newBooking.book(type, startDate, endDate, userID, (err) => {
         if(err) {
             console.error("Error making booking:", err);
             res.status(500).send("Error making booking");
         } else {
             req.session.bookingDetails = { type: type, startDate: startDate, endDate: endDate };
             var confirmationEmail = {
-                from: 'cambodiacare.pungaol@gmail.com',
+                from: 'Cambodia Care - Pu Nagol',
                 to: email,
                 subject: 'Confirmation of your booking with Cambodia Care',
                 text: 'Your booking from '+ startDate + ' to ' + endDate + ' was successful!'
