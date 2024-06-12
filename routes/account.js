@@ -1,3 +1,7 @@
+/* BOOKING.JS
+        Interacts with server.js to load account page
+        Makes sure user is logged in as info is needed to be displayed on this page
+*/
 const express = require('express')
 const router = express.Router()
 const account = require('../models/accounts')

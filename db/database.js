@@ -1,3 +1,7 @@
+/* DATABASE.JS
+        Establishes the connection to the database
+*/
+
 const mysql = require('mysql2');
 const dotenv = require('dotenv');
 

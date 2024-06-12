@@ -1,3 +1,7 @@
+/* EMAIL.JS
+    USED TO SEND EMAILS TO USERS
+*/
+
 var nodemailer = require('nodemailer');
 
 var emailService = nodemailer.createTransport({

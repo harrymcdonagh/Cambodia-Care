@@ -1,3 +1,4 @@
+/* Used to create the database on new devices */
 CREATE DATABASE IF NOT EXISTS `main_db`;
 USE `main_db`;
 

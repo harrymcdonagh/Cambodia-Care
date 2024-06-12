@@ -1,3 +1,7 @@
+/* LOGIN.JS
+    Interacts with server.js to load the page
+    Interacts with the database to allow a user to log in
+*/
 const express = require('express')
 const fs = require('fs');
 const path = require('path');

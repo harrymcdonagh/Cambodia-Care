@@ -1,3 +1,9 @@
+/* SERVER.JS
+    USED TO LOAD ALL PAGES 
+    LINKS ALL ROUTES
+    CONFIGURATES THE WEB PAGE
+*/
+
 const express = require('express')
 const session = require('express-session');
 const app = express()

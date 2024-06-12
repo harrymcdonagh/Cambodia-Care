@@ -1,3 +1,8 @@
+/* BOOKING.JS
+        Interacts with server.js to load booking page
+        Makes sure user is logged in to create a booking
+        Confirms the booking and sends email to them
+*/
 const express = require('express');
 const router = express.Router();
 const ensureAuthenticated = require('../middleware/auth');
