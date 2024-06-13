@@ -18,8 +18,10 @@ router.post('/register-confirm', (req, res) => {
     lr_func.register(email, name, password);
     if (req.body.name && req.body.email && req.body.password) {
         res.sendStatus(201);
+        console.log("test1");
         //res.status(201).json('All fields passed');
         res.redirect('/login');
+        console.log("test2");
         return;
       }
     res.redirect('/login');

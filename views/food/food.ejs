@@ -1,0 +1,32 @@
+<link href="/css/food.css" rel="stylesheet">
+<body>
+    <div class="content">
+        <div class="donate-page-container">
+            <h1>Support Pu Ngaol</h1>
+            <p>If you are unable to physically volunteer in Pu Ngaol, you can still make a significant impact by donating. Your contributions will help us provide essential resources and infrastructure to improve the lives of the villagers.</p>
+            <div class="donate-section">
+                <h2>Why Donate?</h2>
+                <p>Your donations will directly support projects such as building wells, constructing houses, and providing educational materials. Every contribution, no matter the size, makes a difference.</p>
+                <ul>
+                    <li><strong>Direct Impact:</strong> Your funds will be used to directly benefit the community.</li>
+                    <li><strong>Transparency:</strong> We provide regular updates on how donations are being utilized.</li>
+                    <li><strong>Community Development:</strong> Your support helps build a sustainable future for Pu Ngaol.</li>
+                </ul>
+                <button class="donate-button" onclick="showDonationForm()">Donate Now</button>
+                <div id="donation-form" class="hidden">
+                    <h3>Enter Donation Amount</h3>
+                    <form>
+                        <label for="amount">Amount (£):</label>
+                        <input type="number" id="amount" name="amount" min="1" required>
+                        <button type="submit">Submit Donation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showDonationForm() {
+            document.getElementById('donation-form').classList.toggle('hidden');
+        }
+    </script>
+</body>

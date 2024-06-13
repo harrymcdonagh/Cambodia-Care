@@ -2,7 +2,6 @@ const db = require('../db/database').mysql_pool;
 
 function getUserAccount(userid) {
     return new Promise((resolve, reject) => {
-        console.log(userid)
         const query =  "SELECT * FROM user_tb WHERE userID ='"+userid+"'"; 
         db.getConnection((err, connection) => {
             if(err){

@@ -1,14 +1,24 @@
+<!--
+    BOOKING PAGE
+
+    Used to create bookings for a user to then be stored in the database
+    User must be logged in to access this page
+    Depending on route the user took to get to this page a choice is autoselected for them (source)
+    
+-->
+
+<title>Book Now!</title>
 <link href="/css/booking.css" rel="stylesheet">
 <body>
     <div class = "content">
         <div class="booking-form-container">
-            <form class="booking-form">
+            <form class="booking-form" method="POST" action="/make-booking ">
                 <h2>Request Your Trip</h2>
                 <label for="service">Select Service:</label>
-                <select id="service" name="service" required>
-                    <option value="" disabled selected>Select your option</option>
-                    <option value="teaching">Teaching</option>
-                    <option value="building">Building</option>
+                <select id="service" name="type" required>
+                    <option value="" disabled <%= !source ? 'selected' : '' %>>Select your option</option>
+                    <option value="0" <%= source === 'teach' ? 'selected' : '' %>>Teaching</option>
+                    <option value="1" <%= source === 'build' ? 'selected' : '' %>>Building</option>
                 </select>
                 <label for="start-date">Start Date:</label>
                 <input type="date" id="start-date" name="start-date" required>

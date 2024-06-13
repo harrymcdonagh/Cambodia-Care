@@ -28,7 +28,7 @@ router.post('/login-confirm', (req, res) => {
             return res.sendStatus(201);
             //res.redirect('/');
         }
-        else res.redirect('login'); 
+        else res.redirect('/login'); 
       });  
 });
 
