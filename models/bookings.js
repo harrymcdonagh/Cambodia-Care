@@ -1,3 +1,9 @@
+/* BOOKINGS.JS
+        Interacts with database to handle bookings
+        Creates Bookings
+        Deletes Bookings
+*/
+
 var db = require('../db/database').mysql_pool
 
 function book(type, startDate, endDate, userID, callback){

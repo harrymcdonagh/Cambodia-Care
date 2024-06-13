@@ -1,3 +1,8 @@
+/*BOOKING.JS
+        Interacts with the HTML to tale data inputted for booking.
+        Takes data and uses bookings.js to put in database
+*/
+
 const express = require('express');
 const router = express.Router();
 const ensureAuthenticated = require('../middleware/auth');

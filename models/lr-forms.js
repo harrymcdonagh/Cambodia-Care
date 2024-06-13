@@ -1,3 +1,9 @@
+/* LR-FORMS.JS
+        Interacts with database to process information from the forms
+        Login form.
+        Register form.
+*/
+
 var db = require('../db/database').mysql_pool
 
 

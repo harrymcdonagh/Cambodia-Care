@@ -1,3 +1,11 @@
+/* ACCOUNTS.JS
+        Interacts with the database to help manage account.
+        Displays data
+        Regesiters Accounts
+        Logs In
+*/
+
+
 const db = require('../db/database').mysql_pool;
 
 function getUserAccount(userid) {

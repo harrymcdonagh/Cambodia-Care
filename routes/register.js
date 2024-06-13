@@ -1,3 +1,8 @@
+/* REGISTER.JS
+    Interacts with server.js to load the page
+    Interacts with the HTML to get data that loads into database
+*/
+
 const express = require('express')
 const fs = require('fs');
 const path = require('path');
